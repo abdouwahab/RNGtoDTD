@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0">
+
+  <start>
+    <element name="html">
+      <zeroOrMore>
+        <ref name="section"/>
+      </zeroOrMore>
+    </element>
+  </start>
+
+  <define name="section">
+    <element name="div">
+      <attribute name="class"><value>section</value></attribute>
+      <zeroOrMore>
+        <element name="para">
+          <text/>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="subsection"/>
+      </zeroOrMore>
+   </element>
+  </define>
+
+
+
+
+</rng:grammar>
